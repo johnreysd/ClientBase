@@ -1,9 +1,8 @@
 package dev.zihasz.clientbase.feature.traits;
 
-import dev.zihasz.clientbase.feature.ITrait;
 import org.lwjgl.input.Keyboard;
 
-public interface IBindable extends ITrait {
+public interface IBindable {
 
 	int bind = Keyboard.KEY_NONE;
 

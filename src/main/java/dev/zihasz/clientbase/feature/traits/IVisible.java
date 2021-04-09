@@ -1,8 +1,6 @@
 package dev.zihasz.clientbase.feature.traits;
 
-import dev.zihasz.clientbase.feature.ITrait;
-
-public interface IVisible extends ITrait {
+public interface IVisible {
 
 	boolean visible = true;
 

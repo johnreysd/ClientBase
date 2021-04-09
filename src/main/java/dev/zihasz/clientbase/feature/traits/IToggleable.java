@@ -1,8 +1,6 @@
 package dev.zihasz.clientbase.feature.traits;
 
-import dev.zihasz.clientbase.feature.ITrait;
-
-public interface IToggleable extends ITrait {
+public interface IToggleable {
 
 	boolean enabled = false;
 
