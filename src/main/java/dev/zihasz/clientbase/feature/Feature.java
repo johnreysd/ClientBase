@@ -1,14 +1,13 @@
 package dev.zihasz.clientbase.feature;
 
 import dev.zihasz.clientbase.feature.traits.IDescriptive;
-import dev.zihasz.clientbase.feature.traits.IMinecraft;
 import dev.zihasz.clientbase.setting.Setting;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Feature implements IMinecraft, IDescriptive {
+public abstract class Feature implements IDescriptive {
 
     protected Minecraft mc = Minecraft.getMinecraft();
 
