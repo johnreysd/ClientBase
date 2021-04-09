@@ -2,6 +2,12 @@
 
 ## Why?
 I made this for learning and for use in my private client [ZWare.cc](discord.gg/9PjbbhS).
+
+## TO-DO
+
+* [ ] Add ClickGUI
+* [ ] Add HUD and HUDEditor
+
 ## How to use?
 1. Clone the repository using `git clone https://github.com/zihasz/ClientBase.git <YOUR CLIENT NAME>`
 2. Open the project in your preferred IDE.
