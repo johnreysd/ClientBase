@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import dev.zihasz.clientbase.util.utils.ReflectionUtils;
 import org.reflections.Reflections;
 
 public class ModuleManager extends Manager {
@@ -19,13 +20,11 @@ public class ModuleManager extends Manager {
 	private static List<Module> modules = new ArrayList<>();
 
 	public ModuleManager() {
-		Set<Class> moduleClasses = findClasses("dev.zihasz.clientbase.feature.module.modules", Module.class);
+		Set<Class> moduleClasses = ReflectionUtils.findClasses("dev.zihasz.clientbase.feature.module.modules", Module.class);
 		moduleClasses.forEach(moduleClass -> {
 			try {
-				Module module = (Module) moduleClass.getConstructor().newInstance();
-				addMod(module);
+				addMod((Module) moduleClass.newInstance());
 			}
-			catch (InvocationTargetException e) { e.getCause().printStackTrace(); }
 			catch (Exception e) { e.printStackTrace(); }
 		});
 	}
@@ -49,10 +48,5 @@ public class ModuleManager extends Manager {
 
 	public static Module getModule(String name) { return modules.stream().filter(module -> module.getName().equalsIgnoreCase(name)).findFirst().orElse(null); }
 	public static Module getModule (Class<? extends Module> clazz) { return modules.stream().filter(module -> module.getClass().equals(clazz)).findFirst().orElse(null); }
-
-	public static Set<Class> findClasses(String pack, Class subType) {
-		Reflections reflections = new Reflections(pack);
-		return reflections.getSubTypesOf(subType);
-	}
 
 }

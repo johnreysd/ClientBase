@@ -10,7 +10,7 @@ public abstract class Feature {
 
     protected Minecraft mc = Minecraft.getMinecraft();
 
-    private String name, description;
+    private final String name, description;
     private List<Setting> settings = new ArrayList<>();
 
     public Feature(String name, String description) {

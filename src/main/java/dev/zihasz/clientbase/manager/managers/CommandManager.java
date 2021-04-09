@@ -4,6 +4,7 @@ import dev.zihasz.clientbase.feature.command.Command;
 import dev.zihasz.clientbase.feature.module.Module;
 import dev.zihasz.clientbase.manager.Manager;
 import dev.zihasz.clientbase.setting.Setting;
+import dev.zihasz.clientbase.util.utils.ReflectionUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,13 +25,11 @@ public class CommandManager extends Manager {
 
 	public CommandManager() {
 		MinecraftForge.EVENT_BUS.register(this);
-		Set<Class> commandClasses = findClasses("dev.zihasz.clientbase.feature.command.commands", Command.class);
+		Set<Class> commandClasses = ReflectionUtils.findClasses("dev.zihasz.clientbase.feature.command.commands", Command.class);
 		commandClasses.forEach(commandClass -> {
 			try {
-				Command module = (Command) commandClass.getConstructor().newInstance();
-				commands.add(module);
+				commands.add((Command) commandClass.newInstance());
 			}
-			catch (InvocationTargetException e) { e.getCause().printStackTrace(); }
 			catch (Exception e) { e.printStackTrace(); }
 		});
 	}
@@ -58,11 +57,6 @@ public class CommandManager extends Manager {
 
 			Minecraft.getMinecraft().ingameGUI.getChatGUI().addToSentMessages(event.getMessage());
 		}
-	}
-
-	public static Set<Class> findClasses(String pack, Class subType) {
-		Reflections reflections = new Reflections(pack);
-		return reflections.getSubTypesOf(subType);
 	}
 
 }
