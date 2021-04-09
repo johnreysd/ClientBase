@@ -1,0 +1,9 @@
+{
+  "required": false,
+  "compatibilityLevel": "JAVA_8",
+  "package": "dev.zihasz.clientbase.mixin.mixins",
+  "refmap": "mixins.clientbase.refmap.json",
+  "mixins": [
+    "MixinNetworkManager"
+  ]
+}
