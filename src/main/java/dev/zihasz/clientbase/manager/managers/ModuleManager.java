@@ -20,7 +20,7 @@ public class ModuleManager extends Manager {
 	private static List<Module> modules = new ArrayList<>();
 
 	public ModuleManager() {
-		Set<Class> moduleClasses = ReflectionUtils.findClasses("dev.zihasz.clientbase.feature.module.modules", Module.class);
+		Set<Class> moduleClasses = ReflectionUtils.findClasses(Module.class.getPackage().getName() + ".modules", Module.class);
 		moduleClasses.forEach(moduleClass -> {
 			try {
 				addMod((Module) moduleClass.newInstance());

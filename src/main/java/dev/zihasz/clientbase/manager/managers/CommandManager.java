@@ -25,7 +25,7 @@ public class CommandManager extends Manager {
 
 	public CommandManager() {
 		MinecraftForge.EVENT_BUS.register(this);
-		Set<Class> commandClasses = ReflectionUtils.findClasses("dev.zihasz.clientbase.feature.command.commands", Command.class);
+		Set<Class> commandClasses = ReflectionUtils.findClasses(Module.class.getPackage().getName() + ".commands", Command.class);
 		commandClasses.forEach(commandClass -> {
 			try {
 				commands.add((Command) commandClass.newInstance());
