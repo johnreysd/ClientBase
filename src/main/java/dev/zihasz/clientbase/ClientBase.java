@@ -16,9 +16,18 @@ import org.apache.logging.log4j.Logger;
 @Mod(modid = ClientBase.MOD_ID, name = ClientBase.MOD_NAME, version = ClientBase.MOD_VER)
 public class ClientBase {
 
+    /**
+     * The name of the client
+     */
     public static final String MOD_NAME = "ClientBase";
+    /**
+     * The "ID" of the client
+     */
     public static final String MOD_ID   = "clientbase";
-    public static final String MOD_VER  = "v1.0";
+    /**
+     * The version of the client
+     */
+    public static final String MOD_VER  = "v1.0.0";
 
     public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
     public static final EventBus EVENT_BUS = new EventBus();

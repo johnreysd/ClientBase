@@ -10,6 +10,9 @@ import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
 
+/**
+ * This is for translating Forge and Minecraft events into your clients events.
+ */
 public class EventProcessor {
 
 	public EventProcessor() {

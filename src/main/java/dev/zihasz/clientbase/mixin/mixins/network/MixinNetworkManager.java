@@ -1,4 +1,4 @@
-package dev.zihasz.clientbase.mixin.mixins;
+package dev.zihasz.clientbase.mixin.mixins.network;
 
 import dev.zihasz.clientbase.ClientBase;
 import dev.zihasz.clientbase.event.EventEra;

@@ -3,14 +3,13 @@ package dev.zihasz.clientbase.feature.module;
 import dev.zihasz.clientbase.ClientBase;
 import dev.zihasz.clientbase.feature.Feature;
 import dev.zihasz.clientbase.feature.traits.IBindable;
-import dev.zihasz.clientbase.feature.traits.IMinecraft;
 import dev.zihasz.clientbase.feature.traits.IToggleable;
 import dev.zihasz.clientbase.feature.traits.IVisible;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.common.MinecraftForge;
 import org.lwjgl.input.Keyboard;
 
-public abstract class Module extends Feature implements IBindable, IToggleable, IVisible, IMinecraft {
+public abstract class Module extends Feature implements IBindable, IToggleable, IVisible {
 
     private Category category;
 
@@ -18,6 +17,14 @@ public abstract class Module extends Feature implements IBindable, IToggleable, 
     private boolean enabled;
     private boolean visible;
 
+    /**
+     * The main constructor of the {@link Module} class.
+     * @param name the name of the module.
+     * @param description the description of the modules
+     * @param category the {@link Category} for the module.
+     * @param bind the bind of the module
+     * @param visible is the module visible
+     */
     public Module(String name, String description, Category category, int bind, boolean visible) {
         super(name, description);
         this.category = category;
@@ -35,6 +42,7 @@ public abstract class Module extends Feature implements IBindable, IToggleable, 
         ClientBase.EVENT_BUS.register(this);
         this.onEnable();
     }
+
     public void disable() {
         this.onPreDisable();
         this.enabled = false;
@@ -42,6 +50,7 @@ public abstract class Module extends Feature implements IBindable, IToggleable, 
         ClientBase.EVENT_BUS.unregister(this);
         this.onDisable();
     }
+
     public void toggle() {
         if (enabled) disable();
         else enable();

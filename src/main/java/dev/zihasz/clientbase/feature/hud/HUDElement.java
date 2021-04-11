@@ -19,10 +19,35 @@ public abstract class HUDElement extends Feature implements IToggleable {
 
 	public abstract void render();
 
+	/**
+	 * The width of the element
+	 * @return the width of the elemetn
+	 */
 	public abstract float width();
+
+	/**
+	 * The height of the element
+	 * @return the height of the element
+	 */
 	public abstract float height();
+
+	public void enable() {
+		this.enabled = true;
+		this.onEnable();
+	}
+	public void disable() {
+		this.enabled = false;
+		this.onDisable();
+	}
+	public void toggle() {
+		if (enabled) disable();
+		else enable();
+	}
 
 	public boolean isEnabled() { return enabled; }
 	public void setEnabled(boolean enabled) { this.enabled = enabled; }
+
+	public void onEnable() {}
+	public void onDisable() {}
 
 }
