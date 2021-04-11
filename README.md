@@ -7,6 +7,7 @@ I made this for learning and for use in my private client [ZWare.cc](discord.gg/
 
 * [ ] Add ClickGUI
 * [ ] Add HUD and HUDEditor
+* [ ] Add Javadocs
 
 ## How to use?
 1. Clone the repository using `git clone https://github.com/zihasz/ClientBase.git <YOUR CLIENT NAME>`

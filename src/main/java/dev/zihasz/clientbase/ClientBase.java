@@ -2,6 +2,7 @@ package dev.zihasz.clientbase;
 
 import dev.zihasz.clientbase.event.EventProcessor;
 import dev.zihasz.clientbase.manager.managers.CommandManager;
+import dev.zihasz.clientbase.manager.managers.ConfigManager;
 import dev.zihasz.clientbase.manager.managers.ModuleManager;
 import dev.zihasz.clientbase.mixin.MixinLoader;
 import net.minecraftforge.fml.common.Mod;
@@ -29,23 +30,44 @@ public class ClientBase {
     public static CommandManager commandManager;
     public static ModuleManager moduleManager;
 
-    // Load mixins and commands here
+    /**
+     * Load mixins and events here
+     */
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         eventProcessor = new EventProcessor();
+        LOGGER.info("Initialized EventProcessor!");
+
         mixinLoader = new MixinLoader();
+        LOGGER.info("Initialized MixinLoader!");
     }
 
-    // Load features here
+    /**
+     * Load features here
+     */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
         commandManager = new CommandManager();
+        LOGGER.info("Initialized CommandManager!");
+
         moduleManager = new ModuleManager();
+        LOGGER.info("Initialized ModuleManager!");
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            ConfigManager.save();
+            LOGGER.info("Shutdown hook registered for config saving.");
+        }));
+
+        ConfigManager.load();
+        LOGGER.info("Config loaded!");
+
 
     }
 
-    // Load events, capes, rich presence here
+    /**
+     * Load events, capes, rich presence here
+     */
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
 

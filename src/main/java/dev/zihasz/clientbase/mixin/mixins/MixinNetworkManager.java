@@ -19,6 +19,8 @@ public class MixinNetworkManager {
     private void preSendPacket(Packet<?> packet, CallbackInfo callbackInfo) {
         PacketEvent event = new PacketEvent.Send(EventEra.PRE, packet);
         ClientBase.EVENT_BUS.post(event);
+
+        if (event.isCancelable()) callbackInfo.cancel();
     }
 
     // Post send packet
@@ -26,6 +28,8 @@ public class MixinNetworkManager {
     private void dispatchSendPacket(Packet<?> packet, CallbackInfo callbackInfo) {
         PacketEvent event = new PacketEvent.Send(EventEra.POST, packet);
         ClientBase.EVENT_BUS.post(event);
+
+        if (event.isCancelable()) callbackInfo.cancel();
     }
 
     // Pre packet receive
@@ -33,6 +37,8 @@ public class MixinNetworkManager {
     private void preChannelRead(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callbackInfo) {
         PacketEvent event = new PacketEvent(EventEra.PRE, packet);
         ClientBase.EVENT_BUS.post(event);
+
+        if (event.isCancelable()) callbackInfo.cancel();
     }
 
     // Post packet receive
@@ -40,6 +46,8 @@ public class MixinNetworkManager {
     private void dispatchChannelRead(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callbackInfo) {
         PacketEvent event = new PacketEvent.Receive(EventEra.POST, packet);
         ClientBase.EVENT_BUS.post(event);
+
+        if (event.isCancelable()) callbackInfo.cancel();
     }
 
 }
