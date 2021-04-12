@@ -1,7 +1,7 @@
 # ClientBase
 
 ## Why?
-I made this for learning and for use in my private client [ZWare.cc](discord.gg/9PjbbhS).
+I made this for learning and for use in my private client [ZWare.cc](https://discord.gg/9PjbbhS).
 
 ## TO-DO
 
