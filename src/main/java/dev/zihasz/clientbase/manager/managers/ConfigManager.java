@@ -26,8 +26,6 @@ public class ConfigManager extends Manager {
 	public static String GUIFile = configFolder + "gui.json";
 	public static String HUDFile = configFolder + "hud.json";
 
-	CopyOnWriteArrayList<ConcurrentLinkedQueue<JSONObject>> concurrentLinkedQueueCopyOnWriteArrayList = new CopyOnWriteArrayList<>();
-
 	public ConfigManager() {
 		initialize();
 	}
@@ -90,8 +88,12 @@ public class ConfigManager extends Manager {
 		catch (IOException exception) { exception.printStackTrace(); }
 
 	}
-	public static void saveGUI() {}
-	public static void saveHUD() {}
+	public static void saveGUI() {
+
+	}
+	public static void saveHUD() {
+
+	}
 
 	public static void loadModules() throws IOException, ParseException {
 		JSONParser parser = new JSONParser();
@@ -111,7 +113,11 @@ public class ConfigManager extends Manager {
 		}
 		reader.close();
 	}
-	public static void loadGUI() throws IOException {}
-	public static void loadHUD() throws IOException {}
+	public static void loadGUI() throws IOException {
+
+	}
+	public static void loadHUD() throws IOException {
+
+	}
 
 }

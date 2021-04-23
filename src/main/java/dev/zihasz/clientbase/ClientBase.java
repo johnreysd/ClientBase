@@ -21,7 +21,7 @@ public class ClientBase {
      */
     public static final String MOD_NAME = "ClientBase";
     /**
-     * The "ID" of the client
+     * The identifier of the client (for Forge and Minecraft)
      */
     public static final String MOD_ID   = "clientbase";
     /**
@@ -30,7 +30,7 @@ public class ClientBase {
     public static final String MOD_VER  = "v1.0.0";
 
     public static final Logger LOGGER = LogManager.getLogger(MOD_NAME);
-    public static final EventBus EVENT_BUS = new EventBus();
+    // public static final EventBus EVENT_BUS = new EventBus();
 
     public static EventProcessor eventProcessor;
     public static MixinLoader mixinLoader;

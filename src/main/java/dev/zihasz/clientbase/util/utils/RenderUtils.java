@@ -111,7 +111,7 @@ public class RenderUtils extends Util {
 		GlStateManager.disableBlend();
 	}
 
-	public void drawHorizontalLine(int startX, int endX, int y, int width, int color) {
+	public static void drawHorizontalLine(int startX, int endX, int y, int width, int color) {
 		if (endX < startX) {
 			int i = startX;
 			startX = endX;
@@ -120,7 +120,7 @@ public class RenderUtils extends Util {
 
 		drawRect(startX, y, endX + 1, y + width, color);
 	}
-	public void drawHorizontalLine(float startX, float endX, float y, float width, int color) {
+	public static void drawHorizontalLine(float startX, float endX, float y, float width, int color) {
 		if (endX < startX) {
 			float i = startX;
 			startX = endX;
@@ -129,7 +129,7 @@ public class RenderUtils extends Util {
 
 		drawRect(startX, y, endX + 1, y + width, color);
 	}
-	public void drawHorizontalLine(double startX, double endX, double y, double width, int color) {
+	public static void drawHorizontalLine(double startX, double endX, double y, double width, int color) {
 		if (endX < startX) {
 			double i = startX;
 			startX = endX;
@@ -139,7 +139,7 @@ public class RenderUtils extends Util {
 		drawRect(startX, y, endX + 1, y + width, color);
 	}
 
-	public void drawVerticalLine(int x, int startY, int endY, int width, int color) {
+	public static void drawVerticalLine(int x, int startY, int endY, int width, int color) {
 		if (endY < startY) {
 			int i = startY;
 			startY = endY;
@@ -148,7 +148,7 @@ public class RenderUtils extends Util {
 
 		drawRect(x, startY + 1, x + width, endY, color);
 	}
-	public void drawVerticalLine(float x, float startY, float endY, float width, int color) {
+	public static void drawVerticalLine(float x, float startY, float endY, float width, int color) {
 		if (endY < startY) {
 			float i = startY;
 			startY = endY;
@@ -157,7 +157,7 @@ public class RenderUtils extends Util {
 
 		drawRect(x, startY + 1, x + width, endY, color);
 	}
-	public void drawVerticalLine(double x, double startY, double endY, double width, int color) {
+	public static void drawVerticalLine(double x, double startY, double endY, double width, int color) {
 		if (endY < startY) {
 			double i = startY;
 			startY = endY;
@@ -167,28 +167,28 @@ public class RenderUtils extends Util {
 		drawRect(x, startY + 1, x + width, endY, color);
 	}
 
-	public void drawString(FontRenderer fontRendererIn, String text, int x, int y, int color) {
+	public static void drawString(FontRenderer fontRendererIn, String text, int x, int y, int color) {
 		fontRendererIn.drawStringWithShadow(text, (float)x, (float)y, color);
 	}
-	public void drawString(FontRenderer fontRendererIn, String text, double x, double y, int color) {
+	public static void drawString(FontRenderer fontRendererIn, String text, double x, double y, int color) {
 		fontRendererIn.drawStringWithShadow(text, (float)x, (float)y, color);
 	}
 
-	public void drawCenteredString(FontRenderer fontRendererIn, String text, int x, int y, int color) {
+	public static void drawCenteredString(FontRenderer fontRendererIn, String text, int x, int y, int color) {
 		fontRendererIn.drawStringWithShadow(
 				text,
 				(float)(x - fontRendererIn.getStringWidth(text) / 2),
 				(float)y,
 				color);
 	}
-	public void drawCenteredString(FontRenderer fontRendererIn, String text, float x, float y, int color) {
+	public static void drawCenteredString(FontRenderer fontRendererIn, String text, float x, float y, int color) {
 		fontRendererIn.drawStringWithShadow(
 				text,
 				(float)(x - fontRendererIn.getStringWidth(text) / 2),
 				(float)y,
 				color);
 	}
-	public void drawCenteredString(FontRenderer fontRendererIn, String text, double x, double y, int color) {
+	public static void drawCenteredString(FontRenderer fontRendererIn, String text, double x, double y, int color) {
 		fontRendererIn.drawStringWithShadow(
 				text,
 				(float) (x - fontRendererIn.getStringWidth(text) / 2),
@@ -196,21 +196,21 @@ public class RenderUtils extends Util {
 				color);
 	}
 
-	public void drawLeftString    (FontRenderer fontRendererIn, String text, int x, int y, int width, int height, int color) {
+	public static void drawLeftString    (FontRenderer fontRendererIn, String text, int x, int y, int width, int height, int color) {
 		fontRendererIn.drawStringWithShadow(
 				text,
 				(x + width) - fontRendererIn.getStringWidth(text),
 				y + (Minecraft.getMinecraft().fontRenderer.FONT_HEIGHT / 2f),
 				color);
 	}
-	public void drawLeftString    (FontRenderer fontRendererIn, String text, float x, float y, float width, float height, int color) {
+	public static void drawLeftString    (FontRenderer fontRendererIn, String text, float x, float y, float width, float height, int color) {
 		fontRendererIn.drawStringWithShadow(
 				text,
 				(x + width) - fontRendererIn.getStringWidth(text),
 				y + (Minecraft.getMinecraft().fontRenderer.FONT_HEIGHT / 2f),
 				color);
 	}
-	public void drawLeftString    (FontRenderer fontRendererIn, String text, double x, double y, double width, double height, int color) {
+	public static void drawLeftString    (FontRenderer fontRendererIn, String text, double x, double y, double width, double height, int color) {
 		fontRendererIn.drawStringWithShadow(
 				text,
 				(float) (x + width) - fontRendererIn.getStringWidth(text),

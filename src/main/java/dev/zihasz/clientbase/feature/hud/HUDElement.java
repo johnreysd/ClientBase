@@ -21,7 +21,7 @@ public abstract class HUDElement extends Feature implements IToggleable {
 
 	/**
 	 * The width of the element
-	 * @return the width of the elemetn
+	 * @return the width of the element
 	 */
 	public abstract float width();
 

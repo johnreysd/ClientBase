@@ -2,8 +2,6 @@ package dev.zihasz.clientbase.feature.traits;
 
 public interface IToggleable {
 
-	boolean enabled = false;
-
 	void enable();
 	void disable();
 	void toggle();

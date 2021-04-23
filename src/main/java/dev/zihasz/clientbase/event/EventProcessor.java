@@ -17,7 +17,6 @@ public class EventProcessor {
 
 	public EventProcessor() {
 		MinecraftForge.EVENT_BUS.register(this);
-		ClientBase.EVENT_BUS.register(this);
 	}
 
 	@SubscribeEvent
@@ -34,25 +33,7 @@ public class EventProcessor {
 	@SubscribeEvent
 	public void onClientTick(TickEvent.ClientTickEvent event) {
 		// for (Module module : ModuleManager.getModules()) module.onClientTick();
-		ModuleManager.getModules().stream().filter(Module::isEnabled).forEach(module -> module.onClientTick());
-	}
-
-	@SubscribeEvent
-	public void onServerTick(TickEvent.ServerTickEvent event) {
-		// for (Module module : ModuleManager.getModules()) module.onServerTick();
-		ModuleManager.getModules().stream().filter(Module::isEnabled).forEach(Module::onServerTick);
-	}
-
-	@SubscribeEvent
-	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		// for (Module module : ModuleManager.getModules()) module.onPlayerTick();
-		ModuleManager.getModules().stream().filter(Module::isEnabled).forEach(Module::onPlayerTick);
-	}
-
-	@SubscribeEvent
-	public void onWorldTick(TickEvent.WorldTickEvent event) {
-		// for (Module module : ModuleManager.getModules()) module.onWorldTick();
-		ModuleManager.getModules().stream().filter(Module::isEnabled).forEach(Module::onWorldTick);
+		ModuleManager.getModules().stream().filter(Module::isEnabled).forEach(Module::onUpdate);
 	}
 
 	@SubscribeEvent

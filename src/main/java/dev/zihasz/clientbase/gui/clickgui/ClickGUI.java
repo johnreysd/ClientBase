@@ -1,6 +1,5 @@
 package dev.zihasz.clientbase.gui.clickgui;
 
-import dev.zihasz.clientbase.gui.clickgui.containers.Panel;
 import net.minecraft.client.gui.GuiScreen;
 
 import java.io.IOException;
@@ -17,6 +16,7 @@ public class ClickGUI extends GuiScreen {
 	@Override
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		super.drawScreen(mouseX, mouseY, partialTicks);
+		// panels.forEach(panel -> panel.);
 	}
 
 	@Override

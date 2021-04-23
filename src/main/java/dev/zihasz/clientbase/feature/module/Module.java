@@ -38,16 +38,14 @@ public abstract class Module extends Feature implements IBindable, IToggleable, 
     public void enable() {
         this.onPreEnable();
         this.enabled = true;
-        MinecraftForge.EVENT_BUS.register(this);
-        ClientBase.EVENT_BUS.register(this);
+        // MinecraftForge.EVENT_BUS.register(this);
         this.onEnable();
     }
 
     public void disable() {
         this.onPreDisable();
+        // MinecraftForge.EVENT_BUS.unregister(this);
         this.enabled = false;
-        MinecraftForge.EVENT_BUS.unregister(this);
-        ClientBase.EVENT_BUS.unregister(this);
         this.onDisable();
     }
 
@@ -56,10 +54,7 @@ public abstract class Module extends Feature implements IBindable, IToggleable, 
         else enable();
     }
 
-    public void onClientTick() {}
-    public void onServerTick() {}
-    public void onPlayerTick() {}
-    public void onWorldTick() {}
+    public void onUpdate() {}
     public void onRender() {}
     public void onWorldRender(RenderWorldLastEvent event) {}
 
