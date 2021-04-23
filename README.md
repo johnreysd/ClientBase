@@ -1,7 +1,7 @@
 # ClientBase
 
 ## Why?
-I made this for learning and for use in my private client [ZWare.cc](discord.gg/9PjbbhS).
+I made this for learning and for use in my private client [ZWare.cc](https://discord.gg/9PjbbhS).
 
 ## TO-DO
 
@@ -10,7 +10,7 @@ I made this for learning and for use in my private client [ZWare.cc](discord.gg/
 * [ ] Add Javadocs
 
 ## How to use?
-1. Clone the repository using `git clone https://github.com/zihasz/ClientBase.git <YOUR CLIENT NAME>`
+1. Clone the repository using `git clone https://github.com/ZWareDevelopment/ClientBase.git <YOUR CLIENT NAME>`
 2. Open the project in your preferred IDE.
 3. Run 
     - On Linux/Mac:
