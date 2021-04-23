@@ -5,11 +5,12 @@ import dev.zihasz.clientbase.manager.managers.CommandManager;
 import dev.zihasz.clientbase.manager.managers.ConfigManager;
 import dev.zihasz.clientbase.manager.managers.ModuleManager;
 import dev.zihasz.clientbase.mixin.MixinLoader;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.EventBus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
